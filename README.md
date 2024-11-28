@@ -37,6 +37,9 @@ The **Book Review** application provides a platform for users to share their tho
 - **Backend**: Node.js, Express.js, MongoDB (Mongoose)
 
 ---
+![Home Page](./assets/screenshots/Screenshot1.png)
+
+---
 
 ## Installation
 
