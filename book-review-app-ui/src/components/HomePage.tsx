@@ -1,12 +1,22 @@
 "use client"
 import { Button } from 'antd'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ReviewSubmitForm from './ReviewSubmitForm'
+import ReviewCardGridContainer from './ReviewCardGridContainer'
+import { ReviewModel } from '@/models/entities'
+import RestService from '@/api-service/rest-service'
+import { ClipLoader } from 'react-spinners'
+import { useReviewContext } from '@/context/ReviewContext'
 
 const HomePage = () => {
-  return (
-    <div>
+  const [isLoading, setIsLoading] = useState<boolean>()
 
-      <Button>Hello</Button>
+  const reviewContext = useReviewContext()
+  return (
+
+    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh", marginTop: "100%", maxWidth: "1200px" }}>
+      <ReviewSubmitForm />
+      <ReviewCardGridContainer bookReviews={reviewContext.reviews!} />
     </div>
   )
 }
